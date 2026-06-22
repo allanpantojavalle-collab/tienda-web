@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Productos</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+
+<a class="navbar-brand" href="index.html">
+SportZone
+</a>
+
+<button class="navbar-toggler"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="index.html">Inicio</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="productos.html">Productos</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="promociones.html">Promociones</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="galeria.html">Galería</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="contacto.html">Contacto</a>
+</li>
+
+</ul>
+
+</div>
+</div>
+</nav>
+
+<div class="container my-5">
+
+<h1 class="text-center mb-5">
+Nuestros Productos
+</h1>
+
+<div class="row">
+
+<!-- PRODUCTO 1 -->
+<div class="col-md-4 mb-4 d-flex">
+<div class="card shadow w-100">
+
+<img src="imagenes/producto1.png" class="card-img-top">
+
+<div class="card-body text-center">
+
+<h5>Tenis Running</h5>
+<p>Ideales para entrenamiento y competencia.</p>
+<h4>C$2500</h4>
+
+<button onclick="comprar(this)" class="btn btn-warning mt-2">
+Comprar
+</button>
+
+</div>
+
+</div>
+</div>
+
+<!-- PRODUCTO 2 -->
+<div class="col-md-4 mb-4 d-flex">
+<div class="card shadow w-100">
+
+<img src="imagenes/producto2.png" class="card-img-top">
+
+<div class="card-body text-center">
+
+<h5>Camiseta Deportiva</h5>
+<p>Ligera y cómoda para ejercicio.</p>
+<h4>C$800</h4>
+
+<button onclick="comprar(this)" class="btn btn-warning mt-2">
+Comprar
+</button>
+
+</div>
+
+</div>
+</div>
+
+<!-- PRODUCTO 3 -->
+<div class="col-md-4 mb-4 d-flex">
+<div class="card shadow w-100">
+
+<img src="imagenes/producto3.png" class="card-img-top">
+
+<div class="card-body text-center">
+
+<h5>Balón de Fútbol</h5>
+<p>Perfecto para entrenamiento.</p>
+<h4>C$600</h4>
+
+<button onclick="comprar(this)" class="btn btn-warning mt-2">
+Comprar
+</button>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- TABLA -->
+
+<div class="container my-5">
+
+<h2 class="mb-4 text-center">
+Tabla de Productos
+</h2>
+
+<table class="table table-striped table-bordered text-center">
+
+<thead>
+<tr>
+<th>Producto</th>
+<th>Categoría</th>
+<th>Precio</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Tenis Running</td>
+<td>Calzado</td>
+<td>C$2500</td>
+</tr>
+
+<tr>
+<td>Camiseta Deportiva</td>
+<td>Ropa</td>
+<td>C$800</td>
+</tr>
+
+<tr>
+<td>Balón Fútbol</td>
+<td>Accesorios</td>
+<td>C$600</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- FORMULARIO -->
+
+<div class="container my-5">
+
+<h2 class="mb-4">
+Pedido Personalizado
+</h2>
+
+<form onsubmit="return validarFormulario()">
+
+<div class="mb-3">
+<label>Nombre</label>
+<input type="text" id="nombre" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Correo</label>
+<input type="email" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Teléfono</label>
+<input type="tel" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Producto</label>
+
+<select class="form-select">
+<option>Tenis</option>
+<option>Camiseta</option>
+<option>Balón</option>
+</select>
+
+</div>
+
+<div class="mb-3">
+<label>Descripción</label>
+<textarea class="form-control"></textarea>
+</div>
+
+<button class="btn btn-warning">
+Enviar Pedido
+</button>
+
+</form>
+
+</div>
+
+<footer class="bg-dark text-white text-center p-4">
+
+<h5>SportZone Store</h5>
+
+<p>© 2026 Todos los derechos reservados.</p>
+
+</footer>
+
+<script>
+
+function validarFormulario(){
+
+let nombre = document.getElementById("nombre").value;
+
+if(nombre==""){
+
+alert("Debe ingresar su nombre");
+return false;
+
+}
+
+alert("Pedido enviado correctamente");
+return true;
+
+}
+
+function comprar(btn){
+btn.style.backgroundColor = "green";
+alert("Producto agregado al carrito");
+}
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
